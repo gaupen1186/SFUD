@@ -49,9 +49,14 @@ extern "C" {
 #define SFUD_DEBUG(...)
 #endif /* SFUD_DEBUG_MODE */
 
+/* info print function. Must be implement by user. */
+#ifdef SFUD_INFO_MODE
 #ifndef SFUD_INFO
 #define SFUD_INFO(...)  sfud_log_info(__VA_ARGS__)
-#endif
+#endif /* SFUD_INFO */
+#else
+#define SFUD_INFO(...)
+#endif /* SFUD_INFO_MODE */
 
 /* assert for developer. */
 #ifdef SFUD_DEBUG_MODE
